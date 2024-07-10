@@ -65,6 +65,8 @@ dependencies {
     testRuntimeOnly("org.seleniumhq.selenium:selenium-safari-driver:4.19.1")
     testImplementation("io.micronaut:micronaut-http-client")
 
+    implementation("com.github.node-gradle:gradle-node-plugin:5.0.0")
+
 }
 
 application {
@@ -93,3 +95,25 @@ assets {
     minifyCss = true
 }
 
+clean {
+    delete fileTree(dir: "src/main/webapp"), "src/main/webapp/images"
+}
+
+grails {
+    pathingJar = true
+}
+
+
+node {
+    version = '16.20.1'
+    download = true
+    nodeModulesDir = file("src/main/client")
+}
+
+task helloWorld( type: NodeTask, dependsOn: 'npmInstall' ) {
+    script = file( 'src/main/client/index.js' )
+}
+
+// task build( dependsOn: 'helloWorld' ) {}
+
+bootRun.dependsOn(helloWorld)
