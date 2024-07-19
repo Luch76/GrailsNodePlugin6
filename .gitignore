@@ -12,3 +12,44 @@ out/
 .settings
 .classpath
 .factorypath
+
+
+APP_CONFIG.groovy
+APP_CONFIG.*
+.vagrant
+*~
+test.xlsx
+~*
+.jpb
+
+/APP_CONFIG_TEST.groovy
+/APP_CONFIG_UAT.groovy
+
+HELP.md
+/build/
+target/
+target-eclipse/
+bin/
+
+/src/main/client/node_modules
+/src/main/client/package-lock.json
+/src/main/webapp
+
+### STS ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
